@@ -12,7 +12,7 @@
     font-size: large;
 
 }
-a {
+.wrapper div a{
     text-decoration: none;
     color: black;
 }
