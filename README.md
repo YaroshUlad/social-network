@@ -1,6 +1,6 @@
 ```mermaid
 graph TD
-A(index.tsx)-->B(<BraowserRouter/>)-->C(<App.tsx/>)
+A(index.tsx)-->B(<BraowserRouter/>)-->C(App.tsx)
 C-->D(<Header/>)
 C-->E(<SideBar/>)
 C-->F(<Content/>)
