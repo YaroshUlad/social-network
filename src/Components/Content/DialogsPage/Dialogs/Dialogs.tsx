@@ -11,7 +11,7 @@ export const Dialogs = (props: DialogsPropsType) => {
         <div className={s.wrapper}>
             {props.dialogs.map((el,index)=>{
                 return(
-                    <div><NavLink to={`dialog/${index}`}>{el}</NavLink></div>
+                    <div><NavLink className={s.wrapperActive} to={`dialogs/${index + el}`}>{el}</NavLink></div>
                 )
             })}
 

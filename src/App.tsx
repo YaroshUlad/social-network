@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {SideBar} from "./Components/SideBar/SideBar";
 import {Content} from "./Components/Content/Content";
+import {Header} from "./Components/Header/Header";
 
 export type DialogsPageType = {
     dialogs:string[]
@@ -20,14 +21,7 @@ export type AppPropsType = {
 function App(props: AppPropsType) {
     return (
         <div className="App">
-            <header className="App-header">
-                <div className={'logoApp'}>
-                    <img
-                        src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwFfJJKXQDLtvVxx9A4CMVl15h5X6UYQ___LJqe9sORZWAixxT7IJ1ITX2nADUtMeQJe8&usqp=CAU'}
-                        alt={'Logo'}/>
-                </div>
-                <span className={'networkTitle'}>Social Network</span>
-            </header>
+            <Header/>
             <div className={'bodyWrapper'}>
                 <SideBar/>
                 <Content data={props.data}/>
