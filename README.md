@@ -1,19 +1,19 @@
 ```mermaid
 graph TD
-A(index.tsx)-->B(<BraowserRouter/>)-->C(App.tsx)
-C-->D(<Header/>)
-C-->E(<SideBar/>)
-C-->F(<Content/>)
-F-->G(<Routes/>)
-G-->H(<Profile/>)
-G-->I(<DialogsPage/>)
-G-->J(<News/>)
-G-->K(<Music/>)
-G-->L(<Settings/>)
-I-->M(<Dialogs/>)
-I-->N(<Messages/>)
-H-->O(<UserDescription/>)
-H-->P(<Posts/>)
+A(index.tsx)-->B(BraowserRouter)-->C(App.tsx)
+C-->D(Header)
+C-->E(SideBar)
+C-->F(Content)
+F-->G(Routes)
+G-->H(Profile)
+G-->I(DialogsPage)
+G-->J(News)
+G-->K(Music)
+G-->L(Settings)
+I-->M(Dialogs)
+I-->N(Messages)
+H-->O(UserDescription)
+H-->P(Posts)
 
 ```
 # additional libraries
