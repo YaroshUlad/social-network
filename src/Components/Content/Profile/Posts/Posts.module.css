@@ -1,0 +1,14 @@
+.posts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.posts div {
+    width: 75%;
+    padding: 15px;
+    background-color: #416364;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 5px;
+}

@@ -1,0 +1,14 @@
+.link{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: black 2px solid;
+    border-radius: 10px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    background-color: #363c52;
+}
+.link a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
