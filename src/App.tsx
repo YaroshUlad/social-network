@@ -3,19 +3,14 @@ import './App.css';
 import {SideBar} from "./Components/SideBar/SideBar";
 import {Content} from "./Components/Content/Content";
 import {Header} from "./Components/Header/Header";
+import {ActionType, StateType} from "./Redux/state";
 
-export type DialogsPageType = {
-    dialogs:string[]
-    messages:string[]
-}
 
-export type DataType = {
-    posts:string[]
-    dialogsPage:DialogsPageType
-}
+
 
 export type AppPropsType = {
-    data: DataType
+    data: StateType
+    dispatch: (action: ActionType)=> void
 }
 
 function App(props: AppPropsType) {
@@ -24,7 +19,7 @@ function App(props: AppPropsType) {
             <Header/>
             <div className={'bodyWrapper'}>
                 <SideBar/>
-                <Content data={props.data}/>
+                <Content data={props.data} dispatch={props.dispatch}/>
             </div>
         </div>
     );

@@ -13,8 +13,8 @@ export const Content = (props: AppPropsType) => {
     return (
         <div>
             <Routes>
-                <Route path={'/profile/*'} element={<Profile posts={props.data.posts}/>} />
-                <Route path={'/dialogs/*'} element={<DialogsPage data={props.data.dialogsPage}/>} />
+                <Route path={'/profile/*'} element={<Profile dispatch={props.dispatch} profileData={props.data.profilePage}/>} />
+                <Route path={'/dialogs/*'} element={<DialogsPage dispatch={props.dispatch} data={props.data.dialogsPage}/>} />
                 <Route path={'/music/*'} element={<Music/>} />
                 <Route path={'/news/*'} element={<News/>} />
                 <Route path={'/settings/*'} element={<Settings/>} />
