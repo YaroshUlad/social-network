@@ -3,7 +3,7 @@ import './App.css';
 import {SideBar} from "./Components/SideBar/SideBar";
 import {Content} from "./Components/Content/Content";
 import {Header} from "./Components/Header/Header";
-import {ActionType, StateType} from "./Redux/state";
+import {ActionType, StateType} from "./Redux/Store";
 
 
 

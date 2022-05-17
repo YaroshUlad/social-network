@@ -1,6 +1,7 @@
 import React, {ChangeEvent, KeyboardEvent} from 'react';
 import s from './Messages.module.css'
-import {ActionType, createAddNewMessage, createUpdateNewMessageTextAction} from "../../../../Redux/state";
+import {ActionType} from "../../../../Redux/Store";
+import {createAddNewMessage, createUpdateNewMessageTextAction} from "../../../../Redux/reducers/dialogsReducer";
 
 type MessagesPropsType = {
     messages:string[]
