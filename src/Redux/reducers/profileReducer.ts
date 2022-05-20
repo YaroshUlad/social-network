@@ -8,7 +8,18 @@ export const createNewPostTextAction = (newPostText: string) => {
     return {type: updateNewPostTextActionType, newPostText: newPostText}
 }
 
-export const profileReducer = (state: ProfilePageType, action: ActionType): ProfilePageType => {
+type StateType = {
+    post: string[]
+    newPostText: string
+}
+const initialState = {
+    posts: ['first post', 'Hello im here', 'whats up?', 'im lucky', 'Privet'],
+    newPostText: ''
+}
+
+
+
+export const profileReducer = (state:ProfilePageType = initialState, action: ActionType): ProfilePageType => {
     switch (action.type) {
         case addNewPostActionType:
             const newPost = [state.newPostText]

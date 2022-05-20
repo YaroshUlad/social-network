@@ -1,5 +1,6 @@
 import {profileReducer} from "./reducers/profileReducer";
 import {dialogReducer} from "./reducers/dialogsReducer";
+import { combineReducers } from "redux";
 
 
 export type ActionType = {
@@ -50,3 +51,9 @@ export let store = {
         this._rerenderEntireTree()
     }
 }
+
+export let rootReducer = combineReducers({
+        profilePage: profileReducer,
+        dialogsPage: dialogReducer
+    }
+)
