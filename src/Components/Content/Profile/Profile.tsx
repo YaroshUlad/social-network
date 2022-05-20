@@ -1,27 +1,38 @@
-import React, { ChangeEvent, KeyboardEvent } from 'react';
+import React, {ChangeEvent, KeyboardEvent} from 'react';
 import s from './Profile.module.css'
 import Posts from "./Posts/Posts";
-import {ActionType, ProfilePageType} from "../../../Redux/Store";
-import {createAddNewPostAction, createNewPostTextAction} from "../../../Redux/reducers/profileReducer";
+/*import {ActionType, ProfilePageType} from "../../../Redux/Store";
+import {createAddNewPostAction, createNewPostTextAction} from "../../../Redux/reducers/profileReducer";*/
 
 type ProfilePropsType = {
-    profileData: ProfilePageType
-    dispatch: (action: ActionType)=> void
+    value: string
+    posts: string[]
+    addPost: () => void
+    updateNewPostText: (text: string) => void
+
+   // dispatch: (action: ActionType) => void
 }
 
 export const Profile = (props: ProfilePropsType) => {
 
-    const updateNewPostText = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    /*const updateNewPostText = (e: ChangeEvent<HTMLTextAreaElement>) => {
         const newAction = createNewPostTextAction(e.currentTarget.value)
         props.dispatch(newAction)
+    }*/
+    /*const addNewPost = () => {
+        const newAction = createAddNewPostAction()
+        props.dispatch(newAction)
+    }*/
+    const updateNewPostText = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        const newText = e.currentTarget.value
+        props.updateNewPostText(newText)
     }
 
     const addNewPost = () => {
-        const newAction = createAddNewPostAction()
-        props.dispatch(newAction)
+        props.addPost()
     }
     const onKeyHandler = (e: KeyboardEvent<HTMLTextAreaElement>) => {
-        if(e.key === 'Enter') {
+        if (e.key === 'Enter') {
             addNewPost()
         }
     }
@@ -44,10 +55,11 @@ export const Profile = (props: ProfilePropsType) => {
             <div className={s.posts}>
                 My Posts
                 <div className={s.enterNewPost}>
-                    <textarea onKeyPress={onKeyHandler} value={props.profileData.newPostText} onChange={updateNewPostText} placeholder={'enter new post here'}/>
-                    <button onClick={addNewPost} >add</button>
+                    <textarea onKeyPress={onKeyHandler} value={props.value}
+                              onChange={updateNewPostText} placeholder={'enter new post here'}/>
+                    <button onClick={addNewPost}>add</button>
                 </div>
-                <Posts posts={props.profileData.posts}/>
+                <Posts posts={props.posts}/>
             </div>
         </div>
     );

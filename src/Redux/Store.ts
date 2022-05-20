@@ -24,6 +24,18 @@ export type StateType = {
     dialogsPage: DialogsPageType
 }
 
+
+export let rootReducer = combineReducers({
+        profilePage: profileReducer,
+        dialogsPage: dialogReducer
+    }
+)
+
+export let store = createStore(rootReducer)
+
+
+
+/*
 export let store1 = {
     _state: {
         profilePage: {
@@ -52,17 +64,7 @@ export let store1 = {
     }
 }
 
-export let rootReducer = combineReducers({
-        profilePage: profileReducer,
-        dialogsPage: dialogReducer
-    }
-)
-
-export let store = createStore(rootReducer)
-
-
-
-
+*/
 
 
 
