@@ -20,10 +20,10 @@ export const dialogReducer = (state: DialogsPageType = initialState, action: Act
             const newMessage = [state.newMessageText]
             state.messages = state.messages.concat(newMessage)
             state.newMessageText = ''
-            return state
+            return {...state}
         case updateNewMessageTextActionType:
             state.newMessageText = action.newMessageText
-            return state
+            return {...state}
         default:
             return state
     }

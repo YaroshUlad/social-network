@@ -1,6 +1,6 @@
 import {profileReducer} from "./reducers/profileReducer";
 import {dialogReducer} from "./reducers/dialogsReducer";
-import { combineReducers } from "redux";
+import { combineReducers, createStore } from "redux";
 
 
 export type ActionType = {
@@ -24,7 +24,7 @@ export type StateType = {
     dialogsPage: DialogsPageType
 }
 
-export let store = {
+export let store1 = {
     _state: {
         profilePage: {
             posts: ['first post', 'Hello im here', 'whats up?', 'im lucky', 'Privet'],
@@ -57,3 +57,13 @@ export let rootReducer = combineReducers({
         dialogsPage: dialogReducer
     }
 )
+
+export let store = createStore(rootReducer)
+
+
+
+
+
+
+
+
