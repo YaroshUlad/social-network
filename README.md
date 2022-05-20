@@ -21,6 +21,7 @@ uuid\
 @types/uuid\
 react-router-dom\
 @types/react-router-dom
+redux\
 
 ## Available Scripts
 
