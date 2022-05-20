@@ -1,4 +1,3 @@
-import React from "react";
 import {ActionType, StateType} from "../../../Redux/Store";
 import {connect} from "react-redux";
 import {Profile} from "./Profile";
