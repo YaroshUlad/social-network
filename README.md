@@ -23,6 +23,9 @@ react-router-dom\
 @types/react-router-dom
 redux\
 @types/redux\
+react-redux\
+@types/react-redux\
+
 
 ## Available Scripts
 
