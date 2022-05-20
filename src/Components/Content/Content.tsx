@@ -1,6 +1,5 @@
 import React from 'react';
 import {Route, Routes } from 'react-router-dom';
-import {Profile} from "./Profile/Profile";
 import Music from "./Music/Music";
 import News from "./News/News";
 import Settings from "./Settings/Settings";
