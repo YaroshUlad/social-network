@@ -1,5 +1,6 @@
 export enum ActionTYPES {
-    setUsers='SET_USERS_ACTION_TYPE'
+    setUsers = 'SET_USERS_ACTION_TYPE',
+    switchPage = 'SWITCH_PAGE_TO_CURRENT'
 }
 
 type UsersReducerActionsType = {
@@ -9,25 +10,30 @@ type UsersReducerActionsType = {
     }
 }
 type PhotosType = {
-    small: string|null
-    large: string|null
+    small: string | null
+    large: string | null
 }
 type UsersType = {
     name: string
     id: number
-    uniqueUrlName: string|null
+    uniqueUrlName: string | null
     photos: PhotosType
     followed: boolean
-    status: string|null
+    status: string | null
 }
-type stateType = {
+export type stateType = {
     error: any
     users: UsersType[]
     totalCount: number
+    currentPage: number
+    pageSize: number
+    loaded: boolean
 }
 const initialStateForUsersPageReducer = {
-
-}as stateType
+    pageSize: 10,
+    currentPage: 1,
+    loaded: false
+} as stateType
 
 export const setUsersAC = (users: UsersType[], totalCount: number) => {
     return {
@@ -39,13 +45,22 @@ export const setUsersAC = (users: UsersType[], totalCount: number) => {
         }
     }
 }
+export const switchPageAC = (currentPage: number) => {
+    return {
+        type: ActionTYPES.switchPage,
+        payload: {
+            currentPage
+        }
+    }
+}
 
 
 export const usersPageReducer = (state: stateType = initialStateForUsersPageReducer, action: UsersReducerActionsType) => {
     switch (action.type) {
         case ActionTYPES.setUsers :
-            return {...state, ...action.payload}
-
+            return {...state, ...action.payload,loaded: true}
+        case ActionTYPES.switchPage :
+            return {...state, ...action.payload, loaded: true}
         default:
             return state
 

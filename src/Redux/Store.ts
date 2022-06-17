@@ -38,6 +38,8 @@ export type FullStateType = ReturnType<typeof rootReducer>
 export let store = createStore(rootReducer)
 
 
+//@ts-ignore
+window.store = store
 
 /*
 export let store1 = {
