@@ -1,1 +1,5 @@
-export const usersAPI = () =>{}
+export const usersAPI = {
+    getUsers () {
+
+    }
+}
