@@ -12,6 +12,7 @@ export const SideBar = () => {
             <div className={s.link}><NavLink to={'/news'}>News</NavLink></div>
             <div className={s.link}><NavLink to={'/music'}>Music</NavLink></div>
             <div className={s.link}><NavLink to={'/settings'}>Settings</NavLink></div>
+            <div className={s.link}><NavLink to={'/users'}>Users</NavLink></div>
         </div>
     );
 };
